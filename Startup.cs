@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -8,6 +8,8 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.EntityFrameworkCore;
+using PruebaCris.Models;
 
 namespace PruebaCris
 {
@@ -24,6 +26,9 @@ namespace PruebaCris
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+
+            services.AddDbContext<PruebaCrisContext>(options =>
+                    options.UseSqlServer(Configuration.GetConnectionString("Server=tcp:pruebacris.database.windows.net,1433;Initial Catalog=PruebaCris;Persist Security Info=False;User ID=ppp;Password=opa1234.;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
