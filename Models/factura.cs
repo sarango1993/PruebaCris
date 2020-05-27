@@ -12,8 +12,10 @@ namespace PruebaCris.Models
 
         public string Nombre { get; set; }
 
-        public int Numero { get; set; }
+        public int Saldo { get; set; }
 
-        public string Direccion { get; set; }
+        public string direccion { get; set; }
+
+        public int Cantidad { get; set; }
     }
 }

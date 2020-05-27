@@ -28,8 +28,9 @@ namespace PruebaCris
             services.AddControllersWithViews();
 
             services.AddDbContext<PruebaCrisContext>(options =>
-                    options.UseSqlServer(Configuration.GetConnectionString("Server=tcp:pruebacris.database.windows.net,1433;Initial Catalog=PruebaCris;Persist Security Info=False;User ID=ppp;Password=opa1234.;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;")));
+                    options.UseSqlServer(Configuration.GetConnectionString("PruebaCoContext")));
         }
+
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
